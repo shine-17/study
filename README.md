@@ -1,2 +1,2 @@
-# study
+# Study
 My Study Space
