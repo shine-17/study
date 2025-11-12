@@ -5,11 +5,13 @@ import java.util.List;
 
 public class AtomicMain {
     private static final int THREAD_COUNT = 10;
-    private static AtomicInteger atomicInteger = new AtomicInteger();
+    private static final AtomicInteger atomicInteger = new AtomicInteger();
 
     public static void main(String[] args) throws InterruptedException {
         List<Thread> threads = new ArrayList<>();
 
+        // 1. 싱글 스레드 환경
+        // 2. 멀티 스레드 환경
         for (int i=0; i<THREAD_COUNT; i++) {
             Thread thread = new Thread(new AtomicTask());
             threads.add(thread);
