@@ -63,7 +63,7 @@ public class ConcurrentTest {
         public void run() {
             try {
                 userSession.getUserSession(session.getSessionId());
-//                System.out.println("userSession = " + session.getSessionId());
+                System.out.println("userSession = " + session.getSessionId());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -83,7 +83,7 @@ public class ConcurrentTest {
         public void run() {
             try {
                 userSession.addUserSession(session);
-//                System.out.println("userSession = " + session.getSessionId());
+                System.out.println("userSession = " + session.getSessionId());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
