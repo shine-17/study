@@ -15,6 +15,7 @@ public class ConcurrentTest {
         }
 
         // 중간에 쓰기
+        // Exclusive Lock 중간에 읽기 (Shared Lock) 접근 불가
         SessionWriteTask sessionWriteTask = new SessionWriteTask(userSessionRW, new UserSession("session" + 4));
         threads[4] = new Thread(sessionWriteTask);
 
@@ -38,6 +39,7 @@ public class ConcurrentTest {
         }
 
         // 중간에 읽기
+        // Shared Lock 중간에 쓰기 (Exclusive Lock) 접근 불가
         SessionReadTask sessionReadTask = new SessionReadTask(userSessionRW, new UserSession("session" + 4));
         threads[4] = new Thread(sessionReadTask);
 
